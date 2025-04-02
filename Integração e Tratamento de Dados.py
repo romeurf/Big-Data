@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
+import time
 
+# Medir o tempo de execução para carregar e processar o dataset com pandas
+start_time = time.time()
 # =============================================================================
 # 1. Carregamento dos Dados
 # =============================================================================
@@ -168,3 +171,6 @@ cleaned_df = clean_dataset(final_df)
 output_filename = 'merged_dataset.xlsx'
 cleaned_df.to_excel(output_filename, index=False)
 print(f"File saved as {output_filename}")
+
+end_time = time.time()
+print("Tempo de execução com Pandas: {:.2f} segundos".format(end_time - start_time))
